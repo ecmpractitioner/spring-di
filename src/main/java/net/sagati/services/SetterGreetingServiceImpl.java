@@ -7,7 +7,6 @@ public class SetterGreetingServiceImpl implements GreetingService {
     @Override
     public String getGreetings() {
 
-        System.out.println("In Greetings class");
         return "Greetings - Setter";
     }
 }

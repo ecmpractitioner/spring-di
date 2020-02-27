@@ -1,9 +1,6 @@
 package net.sagati;
 
-import net.sagati.controllers.ConstructorInjectedController;
-import net.sagati.controllers.MyController;
-import net.sagati.controllers.PropertyInjectedController;
-import net.sagati.controllers.SetterInjectController;
+import net.sagati.controllers.*;
 import net.sagati.services.ConstructorGreetingServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +11,10 @@ public class SpringDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(SpringDiApplication.class, args);
+
+		I18nController i18nController = (I18nController)applicationContext.getBean("i18nController");
+		System.out.println(i18nController.sayGreeting());
+
 		MyController myController = (MyController) applicationContext.getBean("myController");
 		System.out.println(myController.sayGreetings());
 
